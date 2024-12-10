@@ -28,3 +28,6 @@ function App() {
 
 export default App;
 //fonts-static=>react-config file=>getfont fam
+//navigation follow react-navigation doc
+//npm install react-devide-info
+//font awesome react native
