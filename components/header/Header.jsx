@@ -18,7 +18,7 @@ export  const Header = (props)=>{
     };
  return (
     <View>
-        <Text style={headerType()}>
+        <Text style={[headerType(),props.color && {color:props.color}]}>
             {props.title}
         </Text>
     </View>

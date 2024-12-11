@@ -14,7 +14,7 @@ export const style = StyleSheet.create({
     },
     searchinput:{
         flex:1,
-       marginLeft:horizontalScale(5),
+        marginLeft:horizontalScale(5),
        height:'100%',
        fontFamily:getfontFamily('Inter_28pt',400),
        fontSize:fontScaling(8),
