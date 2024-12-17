@@ -12,9 +12,8 @@ export const Tab = (props)=>{
 return (
     <Pressable
 
-    disabled={props.isInactive}
     style={[style.Tab,props.isInactive && style.Inactive,Tabwidth]}
-    onPress={()=> props.onPress()}>
+    onPress={()=> props.onPress(props.tabid)}>
 
         <Text
         onTextLayout={(e)=>{

@@ -22,6 +22,7 @@ export const Search = (props)=>{
             size={fontScaling(12)}/>
             <TextInput ref={textref}
             value={search}
+            placeholder="Search.."
             onChange={(value)=>handleSearch(value)}
              style={style.searchinput}/>
         </Pressable>
