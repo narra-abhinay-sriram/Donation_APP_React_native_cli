@@ -17,3 +17,37 @@ export const createUser = async (fullname, email, password) => {
         }
     }
 };
+
+export const loginUser = async(email,password)=>{
+try{
+    const response = await auth().signInWithEmailAndPassword(email,password);
+    const token = await response.user.getIdToken();
+    return {status:true,
+        data:{
+
+        email:response.user.email,
+        name:response.user.displayName,
+        token,
+    },
+    };
+
+}catch(error)
+{
+          if(error.code === 'auth/invalid-credential')
+              {
+                return {status:false,error: 'Please check your email or password'};
+               }
+           if(error.code === 'auth/user-not-found')
+                {
+                   return {status:false,error: 'The email you entered does not exist. Please create a new account.'};
+
+                 }
+
+                  return {status: false, error: 'Something went wrong'};
+
+}
+};
+
+export const logout = async()=>{
+   await  auth().signOut();
+};

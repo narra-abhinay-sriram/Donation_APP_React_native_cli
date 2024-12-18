@@ -1,22 +1,23 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    firstName:'abhinay',
-    lastName:'Narra',
+isloggedin:false,
     profileImage:require('../../assets/images/user_profile.png'),
 };
 const User = createSlice({
     name:'User',
     initialState:initialState,
     reducers:{
-        updatefirstName:(state,action)=>{
-            state.firstName = action.payload;
-        },
+
         resettoinitial:(state)=>{
             return initialState;
+        },
+        login:(state,action)=>{
+            return {...state,...{isloggedin:true},...action.payload};
+
         },
     },
 });
 
-export const {updatefirstName , resettoinitial} = User.actions;
+export const { resettoinitial,login} = User.actions;
 export default User.reducer;

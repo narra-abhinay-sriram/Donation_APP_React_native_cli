@@ -13,7 +13,7 @@ export const style = StyleSheet.create({
     marginTop:verticalScale(7),
    },
    update:{
-    fontFamily:getfontFamily('Inter_28pt',300),
+    fontFamily:getfontFamily('Inter_28pt',600),
     fontSize:fontScaling(10),
     color: '#FF0000',
     marginBottom: verticalScale(24),

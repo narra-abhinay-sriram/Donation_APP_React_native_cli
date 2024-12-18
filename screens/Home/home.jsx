@@ -10,7 +10,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import style from './style';
 import { FlatList } from 'react-native-gesture-handler';
 import { updateSelectedCategory } from '../../redux/reducers/categories';
-import { resetDonations, updateSlectedDonationId } from '../../redux/reducers/donations';
+import { updateSlectedDonationId } from '../../redux/reducers/donations';
+import { resettoinitial } from '../../redux/reducers/user';
+import { logout } from '../../api/api';
 
 
 
@@ -58,12 +60,21 @@ setDonationList(items);
                     Hello,
                 </Text>
                 <View style={style.username}>
-                <Header title={user.firstName + ' ' + user.lastName[0]} type={2} />
+                <Header title={user.name} type={2} />
 
                 </View>
             </View>
             <View>
             <Image source={require('../../assets/images/user_profile.png')} style={style.profileimage} resizeMode="contain" />
+            <Pressable
+                onPress={async()=>{
+                    dispatch(resettoinitial());
+                    await logout();
+
+                }}
+                >
+                <Header title={'Logout'} type={3} color={'blue'} />
+            </Pressable>
 
             </View>
         </View>

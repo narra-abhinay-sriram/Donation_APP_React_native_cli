@@ -8,10 +8,10 @@ import './firebaseConfig';
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { MainNavigation } from './navigation/mainNavigation';
 import {Provider, useSelector } from "react-redux";
 import store, { persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { Rootnavigation } from './navigation/RootNavigation';
 
 
 
@@ -23,7 +23,7 @@ function App() {
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
       <NavigationContainer>
-    <MainNavigation/>
+        <Rootnavigation />
    </NavigationContainer>
       </PersistGate>
 

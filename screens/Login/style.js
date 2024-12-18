@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
-import { horizontalScale } from "../../assets/styles/scaling";
+import { fontScaling, horizontalScale, verticalScale } from "../../assets/styles/scaling";
+import { getfontFamily } from "../../assets/fonts/helper";
 
 export const style = StyleSheet.create({
     container:{
@@ -11,4 +12,10 @@ export const style = StyleSheet.create({
         alignItems:'center',
         marginLeft:horizontalScale(2),
     },
+    update:{
+        fontFamily:getfontFamily('Inter_28pt',600),
+        fontSize:fontScaling(10),
+        color: '#FF0000',
+        marginBottom: verticalScale(24),
+       },
 });
