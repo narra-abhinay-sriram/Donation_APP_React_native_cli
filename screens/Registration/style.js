@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { horizontalScale } from "../../assets/styles/scaling";
+import { horizontalScale, verticalScale } from "../../assets/styles/scaling";
 
 export const style = StyleSheet.create({
     container:{
@@ -7,8 +7,8 @@ export const style = StyleSheet.create({
         flex:1,
         justifyContent:'center',
     },
-    pressabel:{
-        alignItems:'center',
-        marginLeft:horizontalScale(2),
-    },
+   BackButton:{
+    marginLeft:horizontalScale(14),
+    marginTop:verticalScale(7),
+   },
 });
