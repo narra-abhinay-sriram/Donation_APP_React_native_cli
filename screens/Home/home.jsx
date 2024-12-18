@@ -111,7 +111,12 @@ setDonationList(items);
             {DonationList.length > 0 &&
           (  <View style={style.donationContainer}>
 
-              {DonationList.map(value=>(
+              {
+              DonationList.map(
+                value=>
+                    {
+                         const categoryInfo = categories.categories.find(val=>val.categoryId === categories.selectedCategoryId);
+                    return(
                 <View style={style.singledonationitem}
                  key={value.donationItemId}
 >
@@ -119,16 +124,19 @@ setDonationList(items);
                 donationId={value.donationItemId}
                 onPress={(selectedDonationId)=>{
                     dispatch(updateSlectedDonationId(selectedDonationId));
-                    navigation.navigate('singledonate');
+                    navigation.navigate('singledonate',{categoryInfo});
                 }}
-                 BadgeTitle={categories.categories.filter(val=>val.categoryId === categories.selectedCategoryId)[0].name}
+                 BadgeTitle={categoryInfo.name}
                 uri={value.image}
                 Donationtitle={value.name}
                 price={parseFloat(value.price)}
                 />
                 </View>
 
-              ))}
+              );
+              }
+              )
+              }
 
             </View>
             )}
