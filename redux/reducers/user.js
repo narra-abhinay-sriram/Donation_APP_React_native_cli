@@ -16,8 +16,11 @@ const User = createSlice({
             return {...state,...{isloggedin:true},...action.payload};
 
         },
+        updateToken:(state,action)=>{
+            state.token = action.payload;
+        },
     },
 });
 
-export const { resettoinitial,login} = User.actions;
+export const { resettoinitial,login,updateToken} = User.actions;
 export default User.reducer;
